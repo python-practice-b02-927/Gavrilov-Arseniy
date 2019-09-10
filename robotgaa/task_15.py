@@ -5,24 +5,24 @@ from pyrob.api import *
 
 @task
 def task_8_21():
-    while True:
-        if wall_is_on_the_left() and wall_is_above():
-            move_right(n=9)
-            move_down(n=9)
-            break
-        if wall_is_on_the_left() and wall_is_beneath():
-            move_right(n=9)
-            move_up(n=9)
-            break
-        if wall_is_on_the_right() and wall_is_above():
-            move_down(n=9)
-            move_left(n=9)
-            break
-        if wall_is_on_the_right() and wall_is_beneath():
-            move_left(n=9)
-            move_up(n=9)
-            break
-    
+    if (wall_is_on_the_left()) and (wall_is_above()):
+        while not(wall_is_beneath()):
+            move_down()
+            move_right()
+    elif (wall_is_on_the_right()) and (wall_is_above()):
+        while not(wall_is_beneath()):
+            move_down()
+            move_left()   
+    elif (wall_is_on_the_right()) and (wall_is_beneath()):
+        while not(wall_is_above()):
+            move_up()
+            move_left()     
+    elif (wall_is_on_the_left()) and (wall_is_beneath()):
+        while not(wall_is_above()):
+            move_up()
+            move_right()            
+        
+
 
 if __name__ == '__main__':
     run_tasks()

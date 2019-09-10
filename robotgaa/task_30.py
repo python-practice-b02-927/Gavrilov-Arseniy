@@ -3,10 +3,14 @@
 from pyrob.api import *
 
 
-@task
-def task_1_1():
-    move_down()
-    move_right(2)
+@task(delay=0.01)
+
+    
+        
+               
+    
+    
+        
 
 
 if __name__ == '__main__':
