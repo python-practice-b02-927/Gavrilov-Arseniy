@@ -6,8 +6,7 @@ from pyrob.api import *
 @task
 def task_5_10():
     n=1
-    i=1
-    k=1
+   
     while not wall_is_on_the_right():
         fill_cell()
         move_right()
