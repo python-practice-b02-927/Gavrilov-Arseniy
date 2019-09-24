@@ -5,25 +5,25 @@ from pyrob.api import *
 
 @task
 def task_8_11():
-     while not(wall_is_on_the_right()):
-          if (wall_is_above()) and (wall_is_beneath()):
+     while not wall_is_on_the_right():
+          if wall_is_above() and wall_is_beneath():
                fill_cell()
-          if not(wall_is_above()):
+          if not wall_is_above():
                move_up()
                fill_cell()
                move_down()
-          if not(wall_is_beneath()):
+          if not wall_is_beneath():
                move_down()
                fill_cell()
                move_up()
           move_right()
-     if (wall_is_above()) and (wall_is_beneath()):
+     if wall_is_above() and wall_is_beneath():
                fill_cell()
-     if not(wall_is_above()):
+     if not wall_is_above():
                move_up()
                fill_cell()
                move_down()
-     if not(wall_is_beneath()):
+     if not wall_is_beneath():
                move_down()
                fill_cell()
                move_up()
